@@ -550,7 +550,7 @@
       font-size: 0.65rem;
       color: var(--muted);
     }
-    .btn-copy, .btn-clear {
+    .btn-copy, .btn-clear, .btn-import, .btn-export {
       font-family: var(--font-mono);
       font-size: 0.68rem;
       padding: 0.25rem 0.6rem;
@@ -562,8 +562,16 @@
       letter-spacing: 0.05em;
       transition: color 0.2s, border-color 0.2s;
     }
-    .btn-copy:hover { color: var(--cyan); border-color: var(--cyan-dim); }
-    .btn-clear:hover { color: var(--red); border-color: var(--red-dim); }
+    .btn-copy:hover   { color: var(--cyan); border-color: var(--cyan-dim); }
+    .btn-clear:hover  { color: var(--red);  border-color: var(--red-dim); }
+    .btn-import:hover { color: var(--gold); border-color: rgba(255,201,71,0.5); }
+    .btn-export:hover { color: var(--cyan); border-color: var(--cyan-dim); }
+    .pane-textarea.drag-over {
+      background: rgba(0,240,255,0.05);
+      border: 1px dashed var(--cyan-dim);
+      outline: none;
+    }
+    #fileImport { display: none; }
 
     .converter-status {
       padding: 0.6rem 1.5rem;
@@ -896,7 +904,10 @@
             placeholder="Paste your CSV, JSON, or XML here...&#10;&#10;Or click a sample above to load example data."></textarea>
           <div class="pane-footer">
             <span class="pane-stats" id="inStats">0 chars</span>
-            <button class="btn-clear" onclick="clearInput()">CLEAR</button>
+            <div style="display:flex;gap:0.4rem;align-items:center;">
+              <button class="btn-import" onclick="document.getElementById('fileImport').click()">IMPORT FILE</button>
+              <button class="btn-clear" onclick="clearInput()">CLEAR</button>
+            </div>
           </div>
         </div>
         <div class="pane">
@@ -908,7 +919,10 @@
             placeholder="Converted output will appear here..."></textarea>
           <div class="pane-footer">
             <span class="pane-stats" id="outStats">0 chars</span>
-            <button class="btn-copy" onclick="copyOutput()">COPY</button>
+            <div style="display:flex;gap:0.4rem;align-items:center;">
+              <button class="btn-export" onclick="exportOutput()">EXPORT FILE</button>
+              <button class="btn-copy" onclick="copyOutput()">COPY</button>
+            </div>
           </div>
         </div>
       </div>
@@ -980,6 +994,8 @@
   </footer>
 
   <!-- ── CONVERTER LOGIC ───────────────────────────────────────────────────── -->
+  <input type="file" id="fileImport" accept=".csv,.json,.xml,.txt" />
+
   <script>
   // ── Sample data ────────────────────────────────────────────────────────────
   const SAMPLES = {
@@ -1301,6 +1317,71 @@
     outputEl.value = '';
     setStatus('// ready — paste data or load a sample', 'idle');
     updateStats();
+  }
+
+  // ── Import ─────────────────────────────────────────────────────────────────
+  function importFile(file) {
+    if (!file) return;
+    const ext = file.name.split('.').pop().toLowerCase();
+    const fmtMap = { csv: 'csv', json: 'json', xml: 'xml' };
+    const reader = new FileReader();
+    reader.onload = e => {
+      inputEl.value = e.target.result;
+      if (fmtMap[ext]) {
+        srcEl.value = fmtMap[ext];
+        inBadge.textContent = fmtMap[ext].toUpperCase();
+        // auto-set sensible target
+        const autoTarget = { csv: 'json', json: 'xml', xml: 'json' };
+        tgtEl.value = autoTarget[fmtMap[ext]];
+        outBadge.textContent = tgtEl.value.toUpperCase();
+      }
+      updateStats();
+      setStatus(`// imported: ${file.name} (${_fmt(file.size)}) — hit CONVERT to run`, 'ok');
+    };
+    reader.onerror = () => setStatus('✘ Failed to read file', 'err');
+    reader.readAsText(file, 'UTF-8');
+  }
+
+  document.getElementById('fileImport').addEventListener('change', e => {
+    importFile(e.target.files[0]);
+    e.target.value = ''; // reset so same file can be re-imported
+  });
+
+  // drag & drop on input pane
+  inputEl.addEventListener('dragover', e => {
+    e.preventDefault();
+    inputEl.classList.add('drag-over');
+  });
+  inputEl.addEventListener('dragleave', () => inputEl.classList.remove('drag-over'));
+  inputEl.addEventListener('drop', e => {
+    e.preventDefault();
+    inputEl.classList.remove('drag-over');
+    const file = e.dataTransfer.files[0];
+    if (file) importFile(file);
+  });
+
+  // ── Export ─────────────────────────────────────────────────────────────────
+  function exportOutput() {
+    if (!outputEl.value.trim()) {
+      setStatus('✘ Nothing to export — convert something first', 'err');
+      return;
+    }
+    const fmt = tgtEl.value;
+    const mimeMap = { csv: 'text/csv', json: 'application/json', xml: 'application/xml' };
+    const blob = new Blob([outputEl.value], { type: mimeMap[fmt] + ';charset=utf-8;' });
+    const url  = URL.createObjectURL(blob);
+    const a    = document.createElement('a');
+    a.href     = url;
+    a.download = `datamorph_output.${fmt}`;
+    a.click();
+    URL.revokeObjectURL(url);
+    setStatus(`✔ Exported as datamorph_output.${fmt}`, 'ok');
+  }
+
+  function _fmt(bytes) {
+    if (bytes < 1024) return bytes + ' B';
+    if (bytes < 1048576) return (bytes/1024).toFixed(1) + ' KB';
+    return (bytes/1048576).toFixed(2) + ' MB';
   }
 
   function loadSample(fmt) {
