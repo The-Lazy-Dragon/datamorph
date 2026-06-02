@@ -14,7 +14,7 @@
 [![Python](https://img.shields.io/badge/Python-3.10%2B-0a1628?style=flat-square&logo=python&logoColor=00f0ff)](https://www.python.org/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-0a1628?style=flat-square&logo=opensourceinitiative&logoColor=00f0ff)](LICENSE)
 [![Zero Dependencies](https://img.shields.io/badge/Dependencies-Zero-0a1628?style=flat-square&logoColor=00f0ff)](requirements.txt)
-[![Tests](https://img.shields.io/badge/Tests-Pytest-0a1628?style=flat-square&logo=pytest&logoColor=00f0ff)]()
+[![Tests](https://img.shields.io/badge/Tests-56%20Passing-0a1628?style=flat-square&logo=pytest&logoColor=00f0ff)]()
 [![By The Lazy Dragon](https://img.shields.io/badge/怠竜-Teary%C5%AB-0a1628?style=flat-square&logoColor=ff3a3a)](https://github.com/The-Lazy-Dragon)
 
 *怠竜 Tearyū / The Lazy Dragon — [`github.com/The-Lazy-Dragon`](https://github.com/The-Lazy-Dragon)*
@@ -33,6 +33,9 @@ It was built to be:
 - **Zero-dependency** — pure Python stdlib, no pip bloat
 - **Production-ready** — meaningful error messages, round-trip safe where possible
 
+> 📘 **New here?** Jump to the [Beginner's Quick Start](#-beginners-quick-start) below.
+> 🔧 **Want the full technical deep-dive?** See [INSTRUCTIONS.md](INSTRUCTIONS.md).
+
 ---
 
 ## 🗺️ Conversion Map
@@ -43,6 +46,85 @@ All six paths are fully supported:
 CSV  ──►  JSON     JSON  ──►  CSV     XML  ──►  JSON
 CSV  ──►  XML      JSON  ──►  XML     XML  ──►  CSV
 ```
+
+---
+
+## 🐣 Beginner's Quick Start
+
+**Never used a terminal before? No worries. Here's all you need.**
+
+### Step 1 — Check you have Python
+
+Open a terminal (Command Prompt on Windows, Terminal on Mac/Linux) and type:
+
+```bash
+python --version
+```
+
+You should see something like `Python 3.11.2`. If it says `3.10` or higher, you're good.
+If it says `python` isn't found, try `python3 --version` — and use `python3` everywhere below.
+
+> No Python at all? Download it free from [python.org](https://www.python.org/downloads/).
+
+---
+
+### Step 2 — Get the project
+
+**Option A: Download the ZIP** (easiest)
+1. Click the green **Code** button on this page
+2. Click **Download ZIP**
+3. Extract the folder somewhere you'll remember
+
+**Option B: Clone with Git**
+```bash
+git clone https://github.com/The-Lazy-Dragon/datamorph.git
+```
+
+---
+
+### Step 3 — Navigate into the folder
+
+```bash
+cd datamorph
+```
+
+---
+
+### Step 4 — Run it
+
+```bash
+python src/cli.py examples/squad.csv output.json
+```
+
+That's it. Check your folder — `output.json` is there. You just converted a CSV to JSON.
+
+**Try the other example files:**
+
+```bash
+python src/cli.py examples/colonists.json output.xml
+python src/cli.py examples/films.xml output.csv
+```
+
+**Use your own files:**
+
+```bash
+python src/cli.py myfile.csv myfile.json
+python src/cli.py myfile.json myfile.xml
+python src/cli.py myfile.xml myfile.csv
+```
+
+DataMorph figures out the format from the file extension automatically.
+
+---
+
+### What if something goes wrong?
+
+| Error | Fix |
+|-------|-----|
+| `python: command not found` | Try `python3` instead |
+| `No such file or directory` | Make sure you're inside the `datamorph` folder |
+| Python 3.9 or lower | Update from [python.org](https://www.python.org/downloads/) |
+| Garbled characters | Resave your file as UTF-8 in your editor |
 
 ---
 
@@ -312,7 +394,7 @@ tests/test_converter.py::TestDetectFormat::test_json_extension PASSED
 ...
 tests/test_converter.py::TestRoundTrip::test_csv_xml_csv PASSED
 
-======= 47 passed in 0.18s =======
+======= 56 passed in 0.10s =======
 ```
 
 With coverage report:
@@ -332,11 +414,12 @@ datamorph/
 │   ├── converter.py        ← Core conversion library
 │   └── cli.py              ← Command-line interface
 ├── tests/
-│   └── test_converter.py   ← Full test suite (47 tests)
+│   └── test_converter.py   ← Full test suite (56 tests)
 ├── examples/
 │   ├── squad.csv           ← Sample CSV (football squad data)
 │   ├── colonists.json      ← Sample JSON (nested + arrays)
 │   └── films.xml           ← Sample XML (with attributes)
+├── INSTRUCTIONS.md         ← Full technical usage guide
 ├── conftest.py             ← Pytest path config
 ├── setup.py                ← pip install support
 ├── requirements.txt        ← Dev dependencies only
