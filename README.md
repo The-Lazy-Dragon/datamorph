@@ -37,7 +37,7 @@ It was built to be:
 > 📘 **New here?** Jump to the [Beginner's Quick Start](#-beginners-quick-start) below.
 > 🔧 **Want the full technical deep-dive?** See [INSTRUCTIONS.md](INSTRUCTIONS.md).
 > 🤖 **Want Claude Code integration?** [tearyu-datashift](https://github.com/The-Lazy-Dragon/tearyu-datashift) is the Claude Code skill edition of DataMorph — same converter, rebuilt as a single file with a Claude Code skill wired in.
-
+### Open [Live Editor](https://the-lazy-dragon.github.io/datamorph/)
 ---
 
 ## 🗺️ Conversion Map
@@ -481,6 +481,7 @@ MIT © [The Lazy Dragon (怠竜 Tearyū)](https://github.com/The-Lazy-Dragon)
 ---
 
 <div align="center">
+[Live Editor](https://the-lazy-dragon.github.io/datamorph/)
 
 *Built by The Lazy Dragon — 🇳🇵*
 *怠竜 Tearyū · github.com/The-Lazy-Dragon*
