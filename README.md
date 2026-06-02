@@ -16,6 +16,7 @@
 [![Zero Dependencies](https://img.shields.io/badge/Dependencies-Zero-0a1628?style=flat-square&logoColor=00f0ff)](requirements.txt)
 [![Tests](https://img.shields.io/badge/Tests-56%20Passing-0a1628?style=flat-square&logo=pytest&logoColor=00f0ff)]()
 [![By The Lazy Dragon](https://img.shields.io/badge/怠竜-Teary%C5%AB-0a1628?style=flat-square&logoColor=ff3a3a)](https://github.com/The-Lazy-Dragon)
+[![Claude Code Skill](https://img.shields.io/badge/Claude_Code_Edition-tearyu--datashift-712637?style=flat-square)](https://github.com/The-Lazy-Dragon/tearyu-datashift)
 
 *怠竜 Tearyū / The Lazy Dragon — [`github.com/The-Lazy-Dragon`](https://github.com/The-Lazy-Dragon)*
 
@@ -35,6 +36,7 @@ It was built to be:
 
 > 📘 **New here?** Jump to the [Beginner's Quick Start](#-beginners-quick-start) below.
 > 🔧 **Want the full technical deep-dive?** See [INSTRUCTIONS.md](INSTRUCTIONS.md).
+> 🤖 **Want Claude Code integration?** [tearyu-datashift](https://github.com/The-Lazy-Dragon/tearyu-datashift) is the Claude Code skill edition of DataMorph — same converter, rebuilt as a single file with a Claude Code skill wired in.
 
 ---
 
@@ -460,6 +462,18 @@ python -m pytest tests/ -v
 
 ---
 
+## 🔗 Sister Projects
+
+| Project | What it is |
+|---------|-----------|
+| [**tearyu-datashift**](https://github.com/The-Lazy-Dragon/tearyu-datashift) | The Claude Code skill edition of DataMorph — one file, skill trigger, type inference, XML element naming. Use this if you want Claude to handle conversions for you. |
+| [**NavalStrike**](https://github.com/The-Lazy-Dragon/NavalStrike) | Battleship · 25 ships · 35 achievements · procedural audio · one `.html` |
+| [**lazy-dragons-tictactoe**](https://github.com/The-Lazy-Dragon/lazy-dragons-tictactoe) | TicTacToe · Minimax AI · achievements · dev console · one `.html` |
+| [**Tearyu-Deadshot-Crosshair**](https://github.com/The-Lazy-Dragon/Tearyu-Deadshot-Crosshair) | Chrome extension + Android alpha · crosshair for deadshot.io |
+| [**tearyu-humanizer**](https://github.com/The-Lazy-Dragon/tearyu-humanizer) | Claude Code skill · strips AI texture from writing · v1.1 |
+
+---
+
 ## 📄 License
 
 MIT © [The Lazy Dragon (怠竜 Tearyū)](https://github.com/The-Lazy-Dragon)
@@ -467,8 +481,6 @@ MIT © [The Lazy Dragon (怠竜 Tearyū)](https://github.com/The-Lazy-Dragon)
 ---
 
 <div align="center">
-
-  [Try Live Editor Here](https://the-lazy-dragon.github.io/datamorph/)
 
 *Built by The Lazy Dragon — 🇳🇵*
 *怠竜 Tearyū · github.com/The-Lazy-Dragon*
