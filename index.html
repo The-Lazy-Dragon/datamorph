@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>DataMorph — 怠竜 Tearyū</title>
-  <meta name="description" content="Convert between CSV, JSON, and XML — zero dependencies, production-ready. By The Lazy Dragon." />
+  <title>Tearyū DataMorph — 怠竜</title>
+  <meta name="description" content="Convert between CSV, TSV, JSON, NDJSON, XML, YAML, TOML and HTML tables — desktop app, CLI, and web. By The Lazy Dragon (怠竜 Tearyū)." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Rajdhani:wght@400;500;600;700&family=Noto+Sans+JP:wght@300;400;700&display=swap" rel="stylesheet" />
@@ -585,6 +585,7 @@
     }
     .status-ok   { color: #28c840; }
     .status-err  { color: var(--red); }
+    .status-warn { color: var(--gold); }
     .status-idle { color: var(--muted); }
 
     /* sample data buttons */
@@ -753,13 +754,13 @@
     <a class="nav-brand" href="#hero">
       <span class="nav-logo">怠竜</span>
       <span class="nav-sep">/</span>
-      <span class="nav-name">DataMorph</span>
+      <span class="nav-name">Tearyū DataMorph</span>
     </a>
     <ul class="nav-links">
       <li><a href="#features">Features</a></li>
       <li><a href="#converter">Try It</a></li>
       <li><a href="#install">Install</a></li>
-      <li><a href="https://github.com/The-Lazy-Dragon/datamorph" target="_blank" rel="noopener">GitHub</a></li>
+      <li><a href="https://github.com/The-Lazy-Dragon/tearyu-datamorph" target="_blank" rel="noopener">GitHub</a></li>
       <li><a class="nav-cta" href="#converter">Convert Now</a></li>
     </ul>
   </nav>
@@ -774,20 +775,21 @@
  |____/ \__,_|\__\__,_|_|  |_|\___/|_|  | .__/|_| |_|
                                           |_|</pre>
 
-    <p class="hero-tagline">Convert between CSV, JSON, and XML.<br/>Zero dependencies. Production-ready.</p>
-    <p class="hero-sub">Pure Python stdlib &nbsp;·&nbsp; CLI + Library API &nbsp;·&nbsp; 56 tests passing<span class="cursor">_</span></p>
+    <p class="hero-tagline">Convert between CSV, TSV, JSON, NDJSON, XML, YAML, TOML & HTML tables.<br/>Desktop app, CLI, and web.</p>
+    <p class="hero-sub">9 formats &nbsp;·&nbsp; Desktop app + CLI + Web &nbsp;·&nbsp; 91 tests passing<span class="cursor">_</span></p>
 
     <div class="hero-badges">
       <span class="badge">Python 3.10+</span>
       <span class="badge">MIT License</span>
-      <span class="badge badge-red">Zero Dependencies</span>
-      <span class="badge">56 Tests ✓</span>
+      <span class="badge badge-red">9 Formats</span>
+      <span class="badge">91 Tests ✓</span>
       <span class="badge">UTF-8 Native</span>
+      <span class="badge">Desktop + CLI + Web</span>
     </div>
 
     <div class="hero-btns">
       <a class="btn-primary" href="#converter">Try the Live Converter</a>
-      <a class="btn-outline" href="https://github.com/The-Lazy-Dragon/datamorph" target="_blank" rel="noopener">View on GitHub</a>
+      <a class="btn-outline" href="https://github.com/The-Lazy-Dragon/tearyu-datamorph" target="_blank" rel="noopener">View on GitHub</a>
     </div>
 
     <div class="scroll-hint">
@@ -799,14 +801,20 @@
   <!-- ── CONVERSION MAP ────────────────────────────────────────────────────── -->
   <section id="map">
     <p class="section-label">// all paths supported</p>
-    <h2 class="section-title">Six Conversion <span>Paths</span></h2>
-    <div class="conversion-grid">
-      <div class="conv-cell"><span class="conv-from">CSV</span><span class="conv-arrow">──►</span><span class="conv-to">JSON</span></div>
-      <div class="conv-cell"><span class="conv-from">JSON</span><span class="conv-arrow">──►</span><span class="conv-to">CSV</span></div>
-      <div class="conv-cell"><span class="conv-from">XML</span><span class="conv-arrow">──►</span><span class="conv-to">JSON</span></div>
-      <div class="conv-cell"><span class="conv-from">CSV</span><span class="conv-arrow">──►</span><span class="conv-to">XML</span></div>
-      <div class="conv-cell"><span class="conv-from">JSON</span><span class="conv-arrow">──►</span><span class="conv-to">XML</span></div>
-      <div class="conv-cell"><span class="conv-from">XML</span><span class="conv-arrow">──►</span><span class="conv-to">CSV</span></div>
+    <h2 class="section-title">All Conversion <span>Paths</span></h2>
+    <div class="conversion-grid" style="grid-template-columns:repeat(4,1fr);max-width:1040px;">
+      <div class="conv-cell"><span class="conv-from">CSV</span><span class="conv-arrow">◄►</span><span class="conv-to">JSON</span></div>
+      <div class="conv-cell"><span class="conv-from">CSV</span><span class="conv-arrow">◄►</span><span class="conv-to">TSV</span></div>
+      <div class="conv-cell"><span class="conv-from">CSV</span><span class="conv-arrow">◄►</span><span class="conv-to">XML</span></div>
+      <div class="conv-cell"><span class="conv-from">CSV</span><span class="conv-arrow">◄►</span><span class="conv-to">YAML</span></div>
+      <div class="conv-cell"><span class="conv-from">JSON</span><span class="conv-arrow">◄►</span><span class="conv-to">XML</span></div>
+      <div class="conv-cell"><span class="conv-from">JSON</span><span class="conv-arrow">◄►</span><span class="conv-to">YAML</span></div>
+      <div class="conv-cell"><span class="conv-from">JSON</span><span class="conv-arrow">◄►</span><span class="conv-to">TOML</span></div>
+      <div class="conv-cell"><span class="conv-from">JSON</span><span class="conv-arrow">◄►</span><span class="conv-to">NDJSON</span></div>
+      <div class="conv-cell"><span class="conv-from">YAML</span><span class="conv-arrow">◄►</span><span class="conv-to">TOML</span></div>
+      <div class="conv-cell"><span class="conv-from">XML</span><span class="conv-arrow">◄►</span><span class="conv-to">YAML</span></div>
+      <div class="conv-cell"><span class="conv-from">XLSX</span><span class="conv-arrow">──►</span><span class="conv-to">CSV/JSON</span></div>
+      <div class="conv-cell"><span class="conv-from">HTML</span><span class="conv-arrow">──►</span><span class="conv-to">CSV/JSON</span></div>
     </div>
   </section>
 
@@ -819,8 +827,8 @@
     <div class="features-grid">
       <div class="feature-card">
         <div class="feature-icon">⚡</div>
-        <div class="feature-title">ZERO DEPENDENCIES</div>
-        <p class="feature-desc">Pure Python stdlib only — <strong>csv, json, xml.etree, re, io</strong>. Nothing to install. Nothing to break.</p>
+        <div class="feature-title">9 FORMATS</div>
+        <p class="feature-desc">CSV, TSV, JSON, NDJSON, XML, YAML, TOML, Excel &amp; HTML tables. <strong>All bidirectional</strong> (XLSX/HTML are source-only).</p>
       </div>
       <div class="feature-card">
         <div class="feature-icon">🔁</div>
@@ -840,7 +848,12 @@
       <div class="feature-card">
         <div class="feature-icon">🔍</div>
         <div class="feature-title">AUTO DETECTION</div>
-        <p class="feature-desc">Detects format from <strong>file extension or content</strong>. No need to specify — just point and convert.</p>
+        <p class="feature-desc">Detects format from <strong>file extension or content</strong>. Warns you if pasted content doesn't match the selected format.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">🖥️</div>
+        <div class="feature-title">DESKTOP APP</div>
+        <p class="feature-desc">Full <strong>Tearyū DataMorph</strong> GUI with import/export, session logging, and format mismatch detection. Windows, Mac &amp; Linux.</p>
       </div>
       <div class="feature-card">
         <div class="feature-icon">🛡️</div>
@@ -864,15 +877,19 @@
         <div class="dot dot-r"></div>
         <div class="dot dot-y"></div>
         <div class="dot dot-g"></div>
-        <span class="shell-title">datamorph — live converter</span>
+        <span class="shell-title">tearyu-datamorph — live converter</span>
       </div>
 
       <!-- sample data row -->
       <div class="sample-row">
         <span class="sample-label">LOAD SAMPLE:</span>
-        <button class="btn-sample" onclick="loadSample('csv')">CSV Squad</button>
-        <button class="btn-sample" onclick="loadSample('json')">JSON Nested</button>
-        <button class="btn-sample" onclick="loadSample('xml')">XML Films</button>
+        <button class="btn-sample" onclick="loadSample('csv')">CSV</button>
+        <button class="btn-sample" onclick="loadSample('json')">JSON</button>
+        <button class="btn-sample" onclick="loadSample('xml')">XML</button>
+        <button class="btn-sample" onclick="loadSample('yaml')">YAML</button>
+        <button class="btn-sample" onclick="loadSample('toml')">TOML</button>
+        <button class="btn-sample" onclick="loadSample('tsv')">TSV</button>
+        <button class="btn-sample" onclick="loadSample('ndjson')">NDJSON</button>
       </div>
 
       <!-- controls -->
@@ -880,15 +897,24 @@
         <span class="ctrl-label">FROM</span>
         <select class="fmt-select" id="srcFmt">
           <option value="csv">CSV</option>
+          <option value="tsv">TSV</option>
           <option value="json">JSON</option>
+          <option value="ndjson">NDJSON</option>
           <option value="xml">XML</option>
+          <option value="yaml">YAML</option>
+          <option value="toml">TOML</option>
+          <option value="html">HTML</option>
         </select>
         <span class="arrow-badge">⟶</span>
         <span class="ctrl-label">TO</span>
         <select class="fmt-select" id="tgtFmt">
           <option value="json">JSON</option>
-          <option value="xml">XML</option>
           <option value="csv">CSV</option>
+          <option value="tsv">TSV</option>
+          <option value="ndjson">NDJSON</option>
+          <option value="xml">XML</option>
+          <option value="yaml">YAML</option>
+          <option value="toml">TOML</option>
         </select>
         <button class="btn-convert" onclick="runConvert()">CONVERT ⟶</button>
       </div>
@@ -901,7 +927,7 @@
             <span class="pane-badge pane-badge-in" id="inBadge">CSV</span>
           </div>
           <textarea class="pane-textarea" id="inputData" spellcheck="false"
-            placeholder="Paste your CSV, JSON, or XML here...&#10;&#10;Or click a sample above to load example data."></textarea>
+            placeholder="Paste your CSV, TSV, JSON, NDJSON, XML, YAML, TOML or HTML here...&#10;&#10;Or click a sample above · Or drag &amp; drop a file · Ctrl+Enter to convert"></textarea>
           <div class="pane-footer">
             <span class="pane-stats" id="inStats">0 chars</span>
             <div style="display:flex;gap:0.4rem;align-items:center;">
@@ -949,9 +975,9 @@
         </div>
         <div class="install-code">
           <code><span class="cmd">git clone</span> <span class="arg">https://github.com/</span></code>
-          <code><span class="arg">  The-Lazy-Dragon/datamorph</span></code>
-          <code><span class="cmd">cd</span> datamorph</code>
-          <code><span class="cmd">python</span> src/cli.py input.csv output.json</code>
+          <code><span class="arg">  The-Lazy-Dragon/tearyu-datamorph</span></code>
+          <code><span class="cmd">cd</span> tearyu-datamorph</code>
+          <code><span class="cmd">python</span> src/datamorph_cli.py data.csv out.json</code>
         </div>
       </div>
       <div class="install-card">
@@ -963,7 +989,7 @@
           <code><span class="cmd">pip install</span> <span class="arg">-e .</span></code>
           <code>&nbsp;</code>
           <code><span class="cmd">datamorph</span> data.csv output.json</code>
-          <code><span class="cmd">datamorph</span> data.json output.xml <span class="arg">-v</span></code>
+          <code><span class="cmd">datamorph</span> data.yaml output.toml <span class="arg">-v</span></code>
         </div>
       </div>
       <div class="install-card">
@@ -987,17 +1013,17 @@
     <span class="footer-brand">怠竜 Tearyū / The Lazy Dragon</span>
     <div class="footer-links">
       <a href="https://github.com/The-Lazy-Dragon" target="_blank" rel="noopener">GitHub</a>
-      <a href="https://github.com/The-Lazy-Dragon/datamorph" target="_blank" rel="noopener">Repository</a>
-      <a href="https://github.com/The-Lazy-Dragon/datamorph/blob/main/README.md" target="_blank" rel="noopener">Docs</a>
+      <a href="https://github.com/The-Lazy-Dragon/tearyu-datamorph" target="_blank" rel="noopener">Repository</a>
+      <a href="https://github.com/The-Lazy-Dragon/tearyu-datamorph/blob/main/README.md" target="_blank" rel="noopener">Docs</a>
     </div>
     <span class="footer-mit">MIT License &nbsp;·&nbsp; 🇳🇵</span>
   </footer>
 
   <!-- ── CONVERTER LOGIC ───────────────────────────────────────────────────── -->
-  <input type="file" id="fileImport" accept=".csv,.json,.xml,.txt" />
+  <input type="file" id="fileImport" accept=".csv,.tsv,.json,.ndjson,.jsonl,.xml,.yaml,.yml,.toml,.html,.htm,.txt" />
 
   <script>
-  // ── Sample data ────────────────────────────────────────────────────────────
+  // ── Sample data ─────────────────────────────────────────────────────────────
   const SAMPLES = {
     csv: `id,name,role,nationality,goals,rating
 1,Iker Gorrotxategi,ST,ESP,18,9.1
@@ -1006,265 +1032,364 @@
 4,Toni Kroos,CM,GER,3,8.3
 5,Hari Gurung,LM,NEP,4,7.9`,
 
+    tsv: `name\trole\tgoals\tnationality
+Gorrotxategi\tST\t18\tESP
+Iannone\tSS\t13\tITA
+Modrić\tCM\t2\tCRO
+Kroos\tCM\t3\tGER`,
+
     json: `[
-  {
-    "colonist": "竜炎 古竜",
-    "alias": "Ryūen",
-    "rank": "竜王",
-    "level": 120,
-    "stats": {
-      "shooting": 20,
-      "melee": 20
-    },
-    "bionics": ["archotech_legs", "archotech_eyes"]
-  },
-  {
-    "colonist": "黒影 滅竜",
-    "alias": "MiraMetsuryū",
-    "rank": "Fatalis",
-    "level": 99,
-    "stats": {
-      "shooting": 12,
-      "melee": 18
-    },
-    "bionics": []
-  }
+  {"colonist":"竜炎 古竜","alias":"Ryūen","rank":"竜王","level":120,
+   "stats":{"shooting":20,"melee":20},"bionics":["archotech_legs","archotech_eyes"]},
+  {"colonist":"黒影 滅竜","alias":"MiraMetsuryū","rank":"Fatalis","level":99,
+   "stats":{"shooting":12,"melee":18},"bionics":[]}
 ]`,
+
+    ndjson: `{"name":"Gorrotxategi","role":"ST","goals":18,"nat":"ESP"}
+{"name":"Iannone","role":"SS","goals":13,"nat":"ITA"}
+{"name":"Modrić","role":"CM","goals":2,"nat":"CRO"}`,
 
     xml: `<?xml version="1.0" encoding="UTF-8"?>
 <films>
   <film id="1" tier="S">
-    <title>Train to Busan</title>
-    <year>2016</year>
-    <country>South Korea</country>
-    <score>9.2</score>
+    <title>Train to Busan</title><year>2016</year><country>South Korea</country><score>9.2</score>
   </film>
-  <film id="2" tier="S">
-    <title>Rampant</title>
-    <year>2018</year>
-    <country>South Korea</country>
-    <score>8.5</score>
+  <film id="2" tier="A">
+    <title>One Cut of the Dead</title><year>2017</year><country>Japan</country><score>8.8</score>
   </film>
-  <film id="3" tier="A">
-    <title>One Cut of the Dead</title>
-    <year>2017</year>
-    <country>Japan</country>
-    <score>8.8</score>
-  </film>
-</films>`
+</films>`,
+
+    yaml: `- name: Gorrotxategi
+  role: ST
+  goals: 18
+  stats:
+    shooting: 20
+    pace: 97
+- name: Iannone
+  role: SS
+  goals: 13
+  stats:
+    shooting: 18
+    pace: 88`,
+
+    toml: `[[records]]
+name = "Ryūen"
+rank = "竜王"
+level = "120"
+
+[[records]]
+name = "MiraMetsuryū"
+rank = "Fatalis"
+level = "99"`,
   };
 
-  // ── Parsers & converters (browser-native JS reimplementation) ──────────────
+  // ── Format maps ──────────────────────────────────────────────────────────────
+  const AUTO_TARGET = {
+    csv:'json', tsv:'json', json:'xml', ndjson:'json',
+    xml:'json', yaml:'json', toml:'json', html:'csv',
+  };
+  const MIME_MAP = {
+    csv:'text/csv', tsv:'text/tab-separated-values',
+    json:'application/json', ndjson:'application/x-ndjson',
+    xml:'application/xml', yaml:'text/yaml', toml:'application/toml',
+  };
+  const EXT_MAP = {
+    csv:'csv', tsv:'tsv', tab:'tsv',
+    json:'json', ndjson:'ndjson', jsonl:'ndjson',
+    xml:'xml', yaml:'yaml', yml:'yaml', toml:'toml',
+    html:'html', htm:'html',
+  };
 
-  function parseCSV(text) {
+  // ── CSV / TSV parsers ─────────────────────────────────────────────────────────
+  function parseDelimited(text, delim) {
     text = text.replace(/^\uFEFF/, '');
     const lines = text.split(/\r?\n/).filter(l => l.trim());
-    if (lines.length < 2) throw new Error('CSV is empty or has no data rows.');
-    const headers = parseCSVLine(lines[0]);
+    if (lines.length < 2) throw new Error('File is empty or has no data rows.');
+    const headers = splitLine(lines[0], delim);
     return lines.slice(1).map(line => {
-      const vals = parseCSVLine(line);
+      const vals = splitLine(line, delim);
       const obj = {};
       headers.forEach((h, i) => { obj[h] = vals[i] ?? ''; });
       return obj;
     });
   }
-
-  function parseCSVLine(line) {
-    const result = [];
-    let cur = '', inQuote = false;
+  function splitLine(line, delim) {
+    if (delim === '\t') return line.split('\t');
+    // CSV quoted split
+    const result = []; let cur = '', inQ = false;
     for (let i = 0; i < line.length; i++) {
       const ch = line[i];
-      if (ch === '"') {
-        if (inQuote && line[i+1] === '"') { cur += '"'; i++; }
-        else inQuote = !inQuote;
-      } else if (ch === ',' && !inQuote) {
-        result.push(cur); cur = '';
-      } else {
-        cur += ch;
+      if (ch === '"') { if (inQ && line[i+1]==='"') { cur+='"'; i++; } else inQ=!inQ; }
+      else if (ch === ',' && !inQ) { result.push(cur); cur=''; }
+      else cur += ch;
+    }
+    result.push(cur); return result;
+  }
+  const parseCSV = t => parseDelimited(t, ',');
+  const parseTSV = t => parseDelimited(t, '\t');
+
+  // ── NDJSON parser ─────────────────────────────────────────────────────────────
+  function parseNDJSON(text) {
+    const rows = [];
+    text.split('\n').forEach((line, i) => {
+      line = line.trim(); if (!line) return;
+      try { rows.push(JSON.parse(line)); }
+      catch(e) { throw new Error(`Malformed NDJSON at line ${i+1}: ${e.message}`); }
+    });
+    if (!rows.length) throw new Error('NDJSON is empty.');
+    return rows;
+  }
+
+  // ── YAML parser (basic — handles flat lists and simple mappings) ──────────────
+  function parseYAML(text) {
+    // Try using a very simple block-sequence → array of objects parser
+    // Good enough for the common "list of records" case
+    const lines = text.split('\n');
+    const result = [];
+    let current = null;
+    for (const rawLine of lines) {
+      const line = rawLine.trimEnd();
+      if (/^-\s*$/.test(line) || /^-\s+\w/.test(line)) {
+        // New list item
+        if (current !== null) result.push(current);
+        current = {};
+        const inline = line.replace(/^-\s*/, '');
+        if (inline) {
+          const [k, ...vp] = inline.split(':');
+          if (vp.length) current[k.trim()] = vp.join(':').trim().replace(/^["']|["']$/g,'');
+        }
+      } else if (current !== null && /^\s+\w+:/.test(line)) {
+        const [k, ...vp] = line.trim().split(':');
+        if (vp.length) {
+          const v = vp.join(':').trim().replace(/^["']|["']$/g,'');
+          // Nested: key.subkey
+          if (/^\s{4,}/.test(line)) {
+            // deeper nesting — flatten
+            const parentKey = Object.keys(current).pop();
+            if (typeof current[parentKey] === 'object' && !Array.isArray(current[parentKey])) {
+              current[parentKey][k.trim()] = v;
+            } else {
+              current[k.trim()] = v;
+            }
+          } else if (/^\s{2}/.test(line)) {
+            current[k.trim()] = v || {};
+          }
+        }
+      } else if (/^\w+:/.test(line)) {
+        // Top-level key: value (single object mode)
+        if (current === null) current = {};
+        const [k, ...vp] = line.split(':');
+        current[k.trim()] = vp.join(':').trim().replace(/^["']|["']$/g,'');
       }
     }
-    result.push(cur);
+    if (current !== null) result.push(current);
+    if (!result.length) throw new Error('Could not parse YAML — try JSON format for complex structures.');
+    return result.length === 1 && Object.keys(result[0]).length === 0 ? [] : result;
+  }
+
+  // ── TOML parser (basic — handles [[array of tables]] and key=value) ───────────
+  function parseTOML(text) {
+    const lines = text.split('\n');
+    const result = {}; let current = result; let currentKey = null;
+    for (const raw of lines) {
+      const line = raw.trim(); if (!line || line.startsWith('#')) continue;
+      const arrMatch = line.match(/^\[\[(.+)\]\]$/);
+      const secMatch = line.match(/^\[([^\[].+)\]$/);
+      if (arrMatch) {
+        const k = arrMatch[1].trim();
+        if (!result[k]) result[k] = [];
+        current = {}; result[k].push(current); currentKey = k;
+      } else if (secMatch) {
+        const k = secMatch[1].trim();
+        result[k] = result[k] || {}; current = result[k]; currentKey = k;
+      } else if (line.includes('=')) {
+        const eq = line.indexOf('=');
+        const k = line.slice(0, eq).trim();
+        let v = line.slice(eq+1).trim().replace(/^["']|["']$/g,'');
+        current[k] = v;
+      }
+    }
     return result;
   }
 
-  function flatten(obj, prefix = '') {
-    const items = {};
-    if (obj !== null && typeof obj === 'object' && !Array.isArray(obj)) {
-      for (const [k, v] of Object.entries(obj)) {
-        const key = prefix ? `${prefix}.${k}` : k;
-        Object.assign(items, flatten(v, key));
-      }
-    } else if (Array.isArray(obj)) {
-      obj.forEach((v, i) => {
-        const key = prefix ? `${prefix}.${i}` : String(i);
-        Object.assign(items, flatten(v, key));
-      });
-    } else {
-      items[prefix] = obj === null ? '' : String(obj);
-    }
-    return items;
+  // ── HTML table extractor ──────────────────────────────────────────────────────
+  function parseHTMLTable(html) {
+    const doc = new DOMParser().parseFromString(html, 'text/html');
+    const table = doc.querySelector('table');
+    if (!table) throw new Error('No <table> element found in HTML.');
+    const rows = [...table.querySelectorAll('tr')];
+    if (rows.length < 2) throw new Error('HTML table needs at least a header row and one data row.');
+    const headers = [...rows[0].querySelectorAll('th,td')].map(c => c.textContent.trim() || 'column');
+    return rows.slice(1).map(row => {
+      const cells = [...row.querySelectorAll('td,th')];
+      const obj = {};
+      headers.forEach((h, i) => { obj[h] = cells[i]?.textContent.trim() ?? ''; });
+      return obj;
+    });
   }
 
-  function rowsToJSON(rows) {
-    return JSON.stringify(rows, null, 2);
-  }
-
-  function rowsToXML(rows) {
-    let xml = '<?xml version="1.0" encoding="UTF-8"?>\n<records>\n';
-    for (const row of rows) {
-      xml += '  <record>\n';
-      for (const [k, v] of Object.entries(row)) {
-        const tag = safeTag(k);
-        xml += `    <${tag}>${escXML(String(v))}</${tag}>\n`;
-      }
-      xml += '  </record>\n';
-    }
-    xml += '</records>';
-    return xml;
-  }
-
-  function jsonToCSV(data) {
-    if (!Array.isArray(data)) data = [data];
-    const flatRows = data.map(r => flatten(r));
-    const allKeys = [...new Set(flatRows.flatMap(r => Object.keys(r)))];
-    const lines = [allKeys.map(csvEscape).join(',')];
-    for (const row of flatRows) {
-      lines.push(allKeys.map(k => csvEscape(row[k] ?? '')).join(','));
-    }
-    return lines.join('\n');
-  }
-
-  function jsonToXML(data) {
-    let xml = '<?xml version="1.0" encoding="UTF-8"?>\n';
-    if (Array.isArray(data)) {
-      xml += '<records>\n';
-      for (const item of data) {
-        xml += buildXMLElement('record', item, 1);
-      }
-      xml += '</records>';
-    } else if (typeof data === 'object' && data !== null) {
-      xml += '<root>\n';
-      for (const [k, v] of Object.entries(data)) {
-        xml += buildXMLElement(k, v, 1);
-      }
-      xml += '</root>';
-    }
-    return xml;
-  }
-
-  function buildXMLElement(key, value, depth) {
-    const indent = '  '.repeat(depth);
-    const tag = safeTag(key);
-    if (Array.isArray(value)) {
-      let out = '';
-      for (const item of value) {
-        out += buildXMLElement('item', item, depth);
-      }
-      return `${indent}<${tag}>\n${out}${indent}</${tag}>\n`;
-    } else if (value !== null && typeof value === 'object') {
-      let inner = '';
-      for (const [k, v] of Object.entries(value)) {
-        inner += buildXMLElement(k, v, depth + 1);
-      }
-      return `${indent}<${tag}>\n${inner}${indent}</${tag}>\n`;
-    } else {
-      return `${indent}<${tag}>${escXML(value === null ? '' : String(value))}</${tag}>\n`;
-    }
-  }
-
-  function xmlToJSON(xmlStr) {
-    const parser = new DOMParser();
-    const doc = parser.parseFromString(xmlStr, 'application/xml');
+  // ── XML parser ────────────────────────────────────────────────────────────────
+  function parseXMLtoElement(xmlStr) {
+    const doc = new DOMParser().parseFromString(xmlStr, 'application/xml');
     const err = doc.querySelector('parsererror');
     if (err) throw new Error('Malformed XML: ' + err.textContent.split('\n')[0]);
-    const root = doc.documentElement;
-    return JSON.stringify({ [root.tagName]: elementToObj(root) }, null, 2);
+    return doc.documentElement;
   }
 
+  // ── Flatten ───────────────────────────────────────────────────────────────────
+  function flatten(obj, prefix='') {
+    const out = {};
+    if (obj !== null && typeof obj === 'object' && !Array.isArray(obj)) {
+      for (const [k,v] of Object.entries(obj)) {
+        Object.assign(out, flatten(v, prefix ? `${prefix}.${k}` : k));
+      }
+    } else if (Array.isArray(obj)) {
+      obj.forEach((v,i) => Object.assign(out, flatten(v, prefix ? `${prefix}.${i}` : String(i))));
+    } else {
+      out[prefix] = obj === null ? '' : String(obj);
+    }
+    return out;
+  }
+
+  // ── Serializers ───────────────────────────────────────────────────────────────
+  function rowsToCSV(rows, delim=',') {
+    const keys = [...new Set(rows.flatMap(r => Object.keys(r)))];
+    const esc = v => { v=String(v); return (v.includes(delim)||v.includes('"')||v.includes('\n')) ? `"${v.replace(/"/g,'""')}"` : v; };
+    return [keys.map(k=>esc(k)).join(delim), ...rows.map(r=>keys.map(k=>esc(r[k]??'')).join(delim))].join('\n');
+  }
+  const rowsToTSV   = rows => rowsToCSV(rows, '\t');
+  const rowsToJSON  = rows => JSON.stringify(rows, null, 2);
+  const rowsToNDJSON= rows => rows.map(r => JSON.stringify(r)).join('\n');
+  function rowsToXML(rows) {
+    let x = '<?xml version="1.0" encoding="UTF-8"?>\n<records>\n';
+    for (const row of rows) {
+      x += '  <record>\n';
+      for (const [k,v] of Object.entries(row)) x += `    <${safeTag(k)}>${escXML(String(v))}</${safeTag(k)}>\n`;
+      x += '  </record>\n';
+    }
+    return x + '</records>';
+  }
+  function rowsToYAML(rows) {
+    return rows.map(row =>
+      '- ' + Object.entries(row).map(([k,v],i) => (i===0?'':  '  ') + `${k}: ${JSON.stringify(v)}`).join('\n  ')
+    ).join('\n') + '\n';
+  }
+  function rowsToTOML(rows) {
+    return rows.map(row =>
+      '[[records]]\n' + Object.entries(row).map(([k,v]) => `${safeTag(k)} = ${JSON.stringify(v)}`).join('\n')
+    ).join('\n\n') + '\n';
+  }
+  function rowsToTarget(rows, tgt) {
+    if (tgt==='csv')    return rowsToCSV(rows);
+    if (tgt==='tsv')    return rowsToTSV(rows);
+    if (tgt==='json')   return rowsToJSON(rows);
+    if (tgt==='ndjson') return rowsToNDJSON(rows);
+    if (tgt==='xml')    return rowsToXML(rows);
+    if (tgt==='yaml')   return rowsToYAML(rows);
+    if (tgt==='toml')   return rowsToTOML(rows);
+    throw new Error(`Unsupported target: ${tgt}`);
+  }
+
+  // ── XML → dict ────────────────────────────────────────────────────────────────
   function elementToObj(el) {
     const children = [...el.children];
-    if (children.length === 0) {
-      const result = {};
+    if (!children.length) {
+      const res = {};
       if (el.attributes.length) {
-        result['@attributes'] = Object.fromEntries(
-          [...el.attributes].map(a => [a.name, a.value])
-        );
-        const t = el.textContent.trim();
-        if (t) result['#text'] = t;
-        return result;
+        res['@attributes'] = Object.fromEntries([...el.attributes].map(a=>[a.name,a.value]));
+        const t = el.textContent.trim(); if (t) res['#text'] = t;
+        return res;
       }
       return el.textContent.trim();
     }
-    const result = {};
-    if (el.attributes.length) {
-      result['@attributes'] = Object.fromEntries(
-        [...el.attributes].map(a => [a.name, a.value])
-      );
-    }
+    const res = {};
+    if (el.attributes.length) res['@attributes'] = Object.fromEntries([...el.attributes].map(a=>[a.name,a.value]));
     const grouped = {};
-    for (const child of children) {
-      (grouped[child.tagName] = grouped[child.tagName] || []).push(elementToObj(child));
-    }
-    for (const [tag, items] of Object.entries(grouped)) {
-      result[tag] = items.length === 1 ? items[0] : items;
-    }
-    return result;
+    for (const c of children) (grouped[c.tagName] = grouped[c.tagName]||[]).push(elementToObj(c));
+    for (const [tag,items] of Object.entries(grouped)) res[tag] = items.length===1 ? items[0] : items;
+    return res;
   }
-
-  function xmlToCSV(xmlStr) {
-    const parser = new DOMParser();
-    const doc = parser.parseFromString(xmlStr, 'application/xml');
-    const err = doc.querySelector('parsererror');
-    if (err) throw new Error('Malformed XML: ' + err.textContent.split('\n')[0]);
-    const root = doc.documentElement;
-    const children = [...root.children];
+  function xmlToRows(element) {
+    const children = [...element.children];
     if (!children.length) throw new Error('XML root has no children to convert to rows.');
-    const rows = children.map(c => flatten(elementToObj(c)));
-    const allKeys = [...new Set(rows.flatMap(r => Object.keys(r)))];
-    const lines = [allKeys.map(csvEscape).join(',')];
-    for (const row of rows) {
-      lines.push(allKeys.map(k => csvEscape(row[k] ?? '')).join(','));
+    const first = children[0].tagName;
+    const rows = all => all.map(c => flatten(elementToObj(c)));
+    return children.every(c=>c.tagName===first) ? rows(children) : children.map(c=>flatten({[c.tagName]:elementToObj(c)}));
+  }
+
+  // ── JSON → all ────────────────────────────────────────────────────────────────
+  function jsonToTarget(data, tgt) {
+    if (tgt==='ndjson') return Array.isArray(data) ? data.map(r=>JSON.stringify(r)).join('\n') : JSON.stringify(data);
+    if (tgt==='yaml')   return Array.isArray(data) ? rowsToYAML(data.map(r=>flatten(r))) : rowsToYAML([flatten(data)]);
+    if (tgt==='toml')   return Array.isArray(data) ? rowsToTOML(data.map(r=>flatten(r))) : rowsToTOML([flatten(data)]);
+    if (tgt==='csv'||tgt==='tsv') {
+      const rows = Array.isArray(data) ? data : [data];
+      return tgt==='csv' ? rowsToCSV(rows.map(r=>flatten(r))) : rowsToTSV(rows.map(r=>flatten(r)));
     }
-    return lines.join('\n');
+    if (tgt==='xml') {
+      const d = Array.isArray(data) ? data : [data];
+      let x = '<?xml version="1.0" encoding="UTF-8"?>\n<records>\n';
+      for (const item of d) x += buildXMLElement('record', item, 1);
+      return x + '</records>';
+    }
+    return JSON.stringify(data, null, 2);
+  }
+  function buildXMLElement(key, value, depth) {
+    const ind = '  '.repeat(depth); const tag = safeTag(key);
+    if (Array.isArray(value)) {
+      return `${ind}<${tag}>\n${value.map(v=>buildXMLElement('item',v,depth+1)).join('')}${ind}</${tag}>\n`;
+    } else if (value !== null && typeof value === 'object') {
+      return `${ind}<${tag}>\n${Object.entries(value).map(([k,v])=>buildXMLElement(k,v,depth+1)).join('')}${ind}</${tag}>\n`;
+    }
+    return `${ind}<${tag}>${escXML(value===null?'':String(value))}</${tag}>\n`;
   }
 
-  // ── Utilities ──────────────────────────────────────────────────────────────
-  function safeTag(name) {
-    name = String(name).replace(/[\s/\\]/g, '_').replace(/[^\w.\-]/g, '');
-    return /^\d/.test(name) ? '_' + name : name || 'field';
-  }
-  function escXML(s) {
-    return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
-  }
-  function csvEscape(v) {
-    v = String(v);
-    return (v.includes(',') || v.includes('"') || v.includes('\n'))
-      ? `"${v.replace(/"/g,'""')}"`
-      : v;
+  // ── Utilities ─────────────────────────────────────────────────────────────────
+  function safeTag(n) { n=String(n).replace(/[\s/\\]/g,'_').replace(/[^\w.\-]/g,''); return /^\d/.test(n)?'_'+n:n||'field'; }
+  function escXML(s) { return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
+  function _fmtSize(b) { if(b<1024)return b+' B'; if(b<1048576)return(b/1024).toFixed(1)+' KB'; return(b/1048576).toFixed(2)+' MB'; }
+
+  // ── Auto-detect format from content ──────────────────────────────────────────
+  function detectFormat(text) {
+    const s = text.trim();
+    if (s.startsWith('<')) return s.match(/<\s*table[\s>]/i) ? 'html' : 'xml';
+    if (s.startsWith('{') || s.startsWith('[')) { try { JSON.parse(s); return 'json'; } catch(_){} }
+    const lines = s.split('\n').filter(l=>l.trim());
+    if (lines.length>=2 && lines.slice(0,5).every(l=>l.trim().startsWith('{')||l.trim().startsWith('['))) return 'ndjson';
+    if (/^\w[\w\s]*:\s/m.test(s) && !s.includes('=')) return 'yaml';
+    if (/^\[[\w.]+\]|^\w+\s*=\s*/m.test(s)) return 'toml';
+    if (lines.length>=2 && lines.slice(0,5).every(l=>l.includes('\t'))) return 'tsv';
+    if (lines.length>=2) { const cc=lines.slice(0,5).map(l=>l.split(',').length-1); if(cc.every(c=>c===cc[0]&&c>=1)) return 'csv'; }
+    return null;
   }
 
-  // ── Main convert ───────────────────────────────────────────────────────────
+  // ── Main convert ──────────────────────────────────────────────────────────────
   function convert(input, src, tgt) {
     if (!input.trim()) throw new Error('Input is empty.');
     if (src === tgt) return input;
-    if (src === 'csv') {
-      const rows = parseCSV(input);
-      if (tgt === 'json') return rowsToJSON(rows);
-      if (tgt === 'xml')  return rowsToXML(rows);
+
+    if (src==='csv')   { const rows=parseCSV(input); return rowsToTarget(rows,tgt); }
+    if (src==='tsv')   { const rows=parseTSV(input); return rowsToTarget(rows,tgt); }
+    if (src==='ndjson'){ const rows=parseNDJSON(input); return rowsToTarget(rows,tgt); }
+    if (src==='yaml')  { const rows=parseYAML(input); return rowsToTarget(rows,tgt); }
+    if (src==='toml')  {
+      const data=parseTOML(input);
+      const lists=Object.values(data).filter(v=>Array.isArray(v));
+      const rows=lists.length===1 ? lists[0].map(r=>flatten(r)) : [flatten(data)];
+      return rowsToTarget(rows,tgt);
     }
-    if (src === 'json') {
-      const data = JSON.parse(input);
-      if (tgt === 'csv') return jsonToCSV(data);
-      if (tgt === 'xml') return jsonToXML(data);
-    }
-    if (src === 'xml') {
-      if (tgt === 'json') return xmlToJSON(input);
-      if (tgt === 'csv')  return xmlToCSV(input);
+    if (src==='html')  { const rows=parseHTMLTable(input); return rowsToTarget(rows,tgt); }
+    if (src==='json')  { const data=JSON.parse(input); return jsonToTarget(data,tgt); }
+    if (src==='xml') {
+      const el=parseXMLtoElement(input);
+      if (tgt==='json') return JSON.stringify({[el.tagName]:elementToObj(el)},null,2);
+      const rows=xmlToRows(el);
+      return rowsToTarget(rows,tgt);
     }
     throw new Error(`Unsupported path: ${src} → ${tgt}`);
   }
 
-  // ── UI wiring ──────────────────────────────────────────────────────────────
+  // ── UI wiring ─────────────────────────────────────────────────────────────────
   const inputEl  = document.getElementById('inputData');
   const outputEl = document.getElementById('outputData');
   const srcEl    = document.getElementById('srcFmt');
@@ -1281,24 +1406,46 @@
     inBadge.textContent  = srcEl.value.toUpperCase();
     outBadge.textContent = tgtEl.value.toUpperCase();
   }
+  function setStatus(msg, type) { statusEl.textContent=msg; statusEl.className=`status-${type}`; }
 
-  function setStatus(msg, type) {
-    statusEl.textContent = msg;
-    statusEl.className = `status-${type}`;
-  }
+  // Mismatch detection state
+  let _mismatchWarned = false;
 
   function runConvert() {
-    const src = srcEl.value, tgt = tgtEl.value;
+    const src=srcEl.value, tgt=tgtEl.value;
+    const raw=inputEl.value;
+    if (!raw.trim()) { setStatus('✘  Input is empty', 'err'); return; }
+
+    // Format mismatch detection
+    const detected = detectFormat(raw);
+    if (detected && detected !== src && !_mismatchWarned) {
+      _mismatchWarned = true;
+      const btn = document.querySelector('.btn-convert');
+      const origText = btn.textContent;
+      btn.textContent = `⚠ Looks like ${detected.toUpperCase()} — click again to force`;
+      btn.style.background = 'var(--gold)';
+      btn.style.color = 'var(--navy)';
+      setStatus(`⚠  Content looks like ${detected.toUpperCase()} but FROM is set to ${src.toUpperCase()}. Switch FROM or click Convert again to force.`, 'warn');
+      setTimeout(() => {
+        btn.textContent = origText;
+        btn.style.background = '';
+        btn.style.color = '';
+        _mismatchWarned = false;
+      }, 4000);
+      return;
+    }
+    _mismatchWarned = false;
+
     const t0 = performance.now();
     try {
-      const result = convert(inputEl.value, src, tgt);
+      const result = convert(raw, src, tgt);
       outputEl.value = result;
-      const ms = (performance.now() - t0).toFixed(1);
-      const inKB  = (inputEl.value.length / 1024).toFixed(1);
-      const outKB = (result.length / 1024).toFixed(1);
+      const ms=(performance.now()-t0).toFixed(1);
+      const inKB=(raw.length/1024).toFixed(1);
+      const outKB=(result.length/1024).toFixed(1);
       setStatus(`✔ Done in ${ms} ms  ·  ${inKB} KB → ${outKB} KB  ·  ${src.toUpperCase()} → ${tgt.toUpperCase()}`, 'ok');
     } catch(e) {
-      outputEl.value = '';
+      outputEl.value='';
       setStatus(`✘  ${e.message}`, 'err');
     }
     updateStats();
@@ -1311,32 +1458,29 @@
       setTimeout(() => setStatus('// ready', 'idle'), 2000);
     });
   }
-
   function clearInput() {
-    inputEl.value = '';
-    outputEl.value = '';
+    inputEl.value=''; outputEl.value='';
     setStatus('// ready — paste data or load a sample', 'idle');
     updateStats();
   }
 
-  // ── Import ─────────────────────────────────────────────────────────────────
+  // ── Import ────────────────────────────────────────────────────────────────────
   function importFile(file) {
     if (!file) return;
     const ext = file.name.split('.').pop().toLowerCase();
-    const fmtMap = { csv: 'csv', json: 'json', xml: 'xml' };
+    const fmt = EXT_MAP[ext];
     const reader = new FileReader();
     reader.onload = e => {
       inputEl.value = e.target.result;
-      if (fmtMap[ext]) {
-        srcEl.value = fmtMap[ext];
-        inBadge.textContent = fmtMap[ext].toUpperCase();
-        // auto-set sensible target
-        const autoTarget = { csv: 'json', json: 'xml', xml: 'json' };
-        tgtEl.value = autoTarget[fmtMap[ext]];
-        outBadge.textContent = tgtEl.value.toUpperCase();
+      if (fmt) {
+        srcEl.value = fmt;
+        inBadge.textContent = fmt.toUpperCase();
+        const autoTgt = AUTO_TARGET[fmt] || 'json';
+        tgtEl.value = autoTgt;
+        outBadge.textContent = autoTgt.toUpperCase();
       }
       updateStats();
-      setStatus(`// imported: ${file.name} (${_fmt(file.size)}) — hit CONVERT to run`, 'ok');
+      setStatus(`// imported: ${file.name} (${_fmtSize(file.size)}) — hit CONVERT to run`, 'ok');
     };
     reader.onerror = () => setStatus('✘ Failed to read file', 'err');
     reader.readAsText(file, 'UTF-8');
@@ -1344,66 +1488,45 @@
 
   document.getElementById('fileImport').addEventListener('change', e => {
     importFile(e.target.files[0]);
-    e.target.value = ''; // reset so same file can be re-imported
+    e.target.value='';
   });
 
-  // drag & drop on input pane
-  inputEl.addEventListener('dragover', e => {
-    e.preventDefault();
-    inputEl.classList.add('drag-over');
-  });
+  // Drag & drop
+  inputEl.addEventListener('dragover', e => { e.preventDefault(); inputEl.classList.add('drag-over'); });
   inputEl.addEventListener('dragleave', () => inputEl.classList.remove('drag-over'));
   inputEl.addEventListener('drop', e => {
-    e.preventDefault();
-    inputEl.classList.remove('drag-over');
-    const file = e.dataTransfer.files[0];
-    if (file) importFile(file);
+    e.preventDefault(); inputEl.classList.remove('drag-over');
+    const file = e.dataTransfer.files[0]; if (file) importFile(file);
   });
 
-  // ── Export ─────────────────────────────────────────────────────────────────
+  // ── Export ────────────────────────────────────────────────────────────────────
   function exportOutput() {
-    if (!outputEl.value.trim()) {
-      setStatus('✘ Nothing to export — convert something first', 'err');
-      return;
-    }
-    const fmt = tgtEl.value;
-    const mimeMap = { csv: 'text/csv', json: 'application/json', xml: 'application/xml' };
-    const blob = new Blob([outputEl.value], { type: mimeMap[fmt] + ';charset=utf-8;' });
-    const url  = URL.createObjectURL(blob);
-    const a    = document.createElement('a');
-    a.href     = url;
-    a.download = `datamorph_output.${fmt}`;
-    a.click();
+    if (!outputEl.value.trim()) { setStatus('✘ Nothing to export — convert something first','err'); return; }
+    const fmt=tgtEl.value;
+    const mime=MIME_MAP[fmt]||'text/plain';
+    const blob=new Blob([outputEl.value],{type:mime+';charset=utf-8;'});
+    const url=URL.createObjectURL(blob);
+    const a=document.createElement('a');
+    a.href=url; a.download=`datamorph_output.${fmt}`; a.click();
     URL.revokeObjectURL(url);
-    setStatus(`✔ Exported as datamorph_output.${fmt}`, 'ok');
-  }
-
-  function _fmt(bytes) {
-    if (bytes < 1024) return bytes + ' B';
-    if (bytes < 1048576) return (bytes/1024).toFixed(1) + ' KB';
-    return (bytes/1048576).toFixed(2) + ' MB';
+    setStatus(`✔ Exported as datamorph_output.${fmt}`,'ok');
   }
 
   function loadSample(fmt) {
-    srcEl.value = fmt;
-    // default sensible target
-    if (fmt === 'csv')  tgtEl.value = 'json';
-    if (fmt === 'json') tgtEl.value = 'xml';
-    if (fmt === 'xml')  tgtEl.value = 'json';
-    inputEl.value = SAMPLES[fmt];
-    outputEl.value = '';
-    setStatus(`// sample loaded — hit CONVERT to run`, 'idle');
+    if (!SAMPLES[fmt]) return;
+    srcEl.value=fmt;
+    const tgt=AUTO_TARGET[fmt]||'json';
+    tgtEl.value=tgt;
+    inputEl.value=SAMPLES[fmt];
+    outputEl.value='';
+    setStatus(`// sample loaded: ${fmt.toUpperCase()} → ${tgt.toUpperCase()} — hit CONVERT to run`,'idle');
     updateStats();
   }
 
   inputEl.addEventListener('input', updateStats);
-  srcEl.addEventListener('change', () => { inBadge.textContent = srcEl.value.toUpperCase(); });
-  tgtEl.addEventListener('change', () => { outBadge.textContent = tgtEl.value.toUpperCase(); });
-
-  // Ctrl+Enter to convert
-  inputEl.addEventListener('keydown', e => {
-    if ((e.ctrlKey || e.metaKey) && e.key === 'Enter') runConvert();
-  });
+  srcEl.addEventListener('change', () => { inBadge.textContent=srcEl.value.toUpperCase(); _mismatchWarned=false; });
+  tgtEl.addEventListener('change', () => { outBadge.textContent=tgtEl.value.toUpperCase(); });
+  inputEl.addEventListener('keydown', e => { if((e.ctrlKey||e.metaKey)&&e.key==='Enter') runConvert(); });
 
   updateStats();
   </script>
