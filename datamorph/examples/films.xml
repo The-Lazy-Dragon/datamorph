@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<films>
+  <film id="1" tier="S">
+    <title>Train to Busan</title>
+    <year>2016</year>
+    <country>South Korea</country>
+    <director>Yeon Sang-ho</director>
+    <score>9.2</score>
+    <tags>
+      <tag>zombie</tag>
+      <tag>action</tag>
+      <tag>thriller</tag>
+    </tags>
+  </film>
+  <film id="2" tier="S">
+    <title>Rampant</title>
+    <year>2018</year>
+    <country>South Korea</country>
+    <director>Kim Sung-hun</director>
+    <score>8.5</score>
+    <tags>
+      <tag>zombie</tag>
+      <tag>period</tag>
+      <tag>action</tag>
+    </tags>
+  </film>
+  <film id="3" tier="A">
+    <title>One Cut of the Dead</title>
+    <year>2017</year>
+    <country>Japan</country>
+    <director>Shinichiro Ueda</director>
+    <score>8.8</score>
+    <tags>
+      <tag>zombie</tag>
+      <tag>comedy</tag>
+      <tag>meta</tag>
+    </tags>
+  </film>
+  <film id="4" tier="A">
+    <title>Alive</title>
+    <year>2020</year>
+    <country>South Korea</country>
+    <director>Il Cho</director>
+    <score>7.9</score>
+    <tags>
+      <tag>zombie</tag>
+      <tag>survival</tag>
+    </tags>
+  </film>
+</films>

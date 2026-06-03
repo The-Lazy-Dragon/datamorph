@@ -1,0 +1,58 @@
+[
+  {
+    "id": 1,
+    "colonist": "竜炎 古竜",
+    "alias": "Ryūen",
+    "rank": "竜王",
+    "level": 120,
+    "stats": {
+      "shooting": 20,
+      "melee": 20,
+      "construction": 14
+    },
+    "bionics": ["archotech_legs", "archotech_eyes", "acid_fangs"],
+    "wives": 3
+  },
+  {
+    "id": 2,
+    "colonist": "炎星 竜翼",
+    "alias": "Ryūyoku",
+    "rank": "Ace Pilot",
+    "level": 87,
+    "stats": {
+      "shooting": 17,
+      "melee": 15,
+      "intellectual": 16
+    },
+    "bionics": ["elbow_blade"],
+    "wives": 0
+  },
+  {
+    "id": 3,
+    "colonist": "黒影 滅竜",
+    "alias": "MiraMetsuryū",
+    "rank": "Fatalis",
+    "level": 99,
+    "stats": {
+      "shooting": 12,
+      "melee": 18,
+      "social": 10
+    },
+    "bionics": [],
+    "wives": 0
+  },
+  {
+    "id": 4,
+    "colonist": "血夜 竜影",
+    "alias": "Chiya",
+    "rank": "Philosopher-Saint",
+    "level": 60,
+    "stats": {
+      "shooting": 8,
+      "melee": 10,
+      "intellectual": 19
+    },
+    "bionics": ["archotech_legs", "venom_talon"],
+    "wives": 0
+  }
+]

@@ -1,0 +1,12 @@
+# ─────────────────────────────────────────────────────────────────────────────
+# tearyu-datamorph — dependency manifest
+# ─────────────────────────────────────────────────────────────────────────────
+
+# ── Runtime (optional — only needed for specific formats) ────────────────────
+pyyaml>=6.0        # YAML ↔ * conversions
+openpyxl>=3.1      # Excel (.xlsx) → * conversions
+# tomllib: stdlib in Python 3.11+, no install needed
+
+# ── Development / Testing ────────────────────────────────────────────────────
+pytest>=7.0
+pytest-cov>=4.0
